@@ -1,0 +1,28 @@
+<---Q1. Combine Two Tables--->
+SELECT Person.firstName, Person.lastName, Address.city, Address.state
+FROM Person
+LEFT JOIN Address
+ON Person.personId = Address.personId;
+
+
+<---Q2. Employees Earning More Than Their Managers--->
+SELECT E.name AS Employee FROM Employee e
+JOIN Employee m
+ON e.managerId = m.id
+WHERE e.salary>m.salary;
+
+
+<---Q3. Not Boring Movies--->
+SELECT id,movie,description,rating FROM Cinema
+WHERE id % 2 = 1 AND description != 'boring'
+ORDER By rating  desc;
+
+
+<---Q4.--->
+SELECT name 
+FROM Customer
+WHERE referee_id IS NULL OR
+referee_id != 2;
+
+
+
