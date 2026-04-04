@@ -18,7 +18,7 @@ WHERE id % 2 = 1 AND description != 'boring'
 ORDER By rating  desc;
 
 
-<---Q4.--->
+<---Q4. Find Customer Referee--->
 SELECT name 
 FROM Customer
 WHERE referee_id IS NULL OR
