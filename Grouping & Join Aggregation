@@ -1,5 +1,4 @@
 Q1. Students and Examinations
-
 SELECT
     s.student_id,
     s.student_name,
@@ -17,3 +16,13 @@ GROUP BY
 ORDER BY 
     s.student_id,
     sub.subject_name;
+
+
+Q2. Customers Who Bought All Products
+SELECT c.customer_id
+FROM Customer c
+GROUP BY c.customer_id
+HAVING COUNT(DISTINCT c.product_key) = (
+    SELECT COUNT(*) 
+    FROM Product
+);
